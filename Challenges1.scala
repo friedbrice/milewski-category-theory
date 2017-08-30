@@ -16,13 +16,16 @@ object Challenges1 {
      function respects identity. */
   val composeTest: Boolean = {
 
-    val cases: List[(Int => Int, Int)] = for {
+    val cases: List[(Int => String, Int)] = for {
       x <- (-499 to 500).toList
-      f <- List((z: Int) => x + z, (z: Int) => x * z)
+      f <- List(
+        (z: Int) => (x + z).toString,
+        (z: Int) => (x * z).toString
+      )
     } yield (f, x)
 
     cases.forall { case (f, x) =>
-      (id[Int] ∘ f)(x) == f(x) && (f ∘ id[Int])(x) == f(x)
+      (id[String] ∘ f)(x) == f(x) && (f ∘ id[Int])(x) == f(x)
     }
   }
 
