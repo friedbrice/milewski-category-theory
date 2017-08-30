@@ -1,4 +1,4 @@
-object Challenges1 {
+object Challenges1 extends App {
 
   /* 1. Implement, as best as you can, the identity function in your
      favorite language (or the second favorite, if your favorite
@@ -57,4 +57,6 @@ object Challenges1 {
       | category by letting objects be verticies and morphisms be paths
       | on the graph.
       |""".stripMargin
+
+  println(composeTest)
 }
